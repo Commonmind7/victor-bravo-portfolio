@@ -7,6 +7,7 @@ import {
   ClipboardList,
   ExternalLink,
   FileText,
+  Github,
   GraduationCap,
   HeartPulse,
   Mail,
@@ -19,94 +20,150 @@ import {
 import { Button } from "./components/ui/button.jsx";
 import { Card, CardContent } from "./components/ui/card.jsx";
 
+const linkedInUrl = "https://www.linkedin.com/in/victor-bravo-a05b79291/";
+const githubUrl = "https://github.com/Commonmind7";
+
 export default function PhysicianScientistPortfolio() {
   const cvHighlights = [
     {
       label: "Education",
       value: "UTSA Biology major",
-      detail: "Chemistry minor and member of the UTSA Honors College",
+      date: "Fall 2023-Present",
+      detail:
+        "B.S. Biology, Chemistry minor; expected graduation Fall 2026",
+    },
+    {
+      label: "Honors College",
+      value: "UTSA Honors College",
+      date: "Fall 2024-Present",
+      detail: "Honors coursework, student community, and academic development",
     },
     {
       label: "Research Home",
       value: "Mays Cancer Center",
+      date: "Summer 2025-Present",
       detail: "Dr. Brenner Lab at UT Health San Antonio",
     },
     {
       label: "Research Focus",
       value: "Translational oncology",
-      detail: "Leptomeningeal disease and endocrine-resistant breast cancer",
+      date: "Current",
+      detail:
+        "Leptomeningeal disease, ER+ breast cancer, and endocrine resistance",
     },
     {
       label: "Clinical Exposure",
       value: "MA and ED scribe",
-      detail: "Hopscotch Health and Methodist emergency departments",
+      date: "2024-Present",
+      detail: "Hopscotch Health and Methodist hospital emergency departments",
     },
     {
       label: "Service",
       value: "Community-centered care",
-      detail: "Corazón Medical Clinic and VAW Medical Chapter",
+      date: "2023-Present",
+      detail: "Corazón Medical Clinic and medically focused service",
     },
     {
       label: "Leadership",
       value: "Preparation and mentorship",
-      detail: "VAW Medical Site Leader and HCSAB board member",
+      date: "2025-Present",
+      detail: "VAW Site Leader, HCSAB, Pathways, and first-generation support",
     },
     {
       label: "Presentation",
       value: "NCUR 2026 poster",
-      detail: "Poster #1119 in Richmond, Virginia",
-    },
-    {
-      label: "Direction",
-      value: "MD/PhD preparation",
-      detail: "Oncology, cancer biology, and translational medicine",
+      date: "April 15, 2026",
+      detail: "Poster #1119, Richmond, Virginia",
     },
   ];
 
-  const researchAreas = [
+  const researchInterests = [
+    "Translational oncology",
+    "Endocrine-resistant breast cancer",
+    "ER+ breast cancer",
+    "Leptomeningeal disease",
+    "Cancer metastasis",
+    "IVIS imaging and preclinical models",
+    "Patient-centered cancer research",
+    "Technical tools for research organization and communication",
+  ];
+
+  const researchSummary = [
+    {
+      title: "Project Background",
+      text:
+        "The main project I have contributed to focuses on establishing an in vivo model of leptomeningeal disease using tamoxifen-resistant MCF7 breast cancer cells, within a translational oncology setting at Mays Cancer Center.",
+    },
+    {
+      title: "My Role",
+      text:
+        "I have supported the project as an undergraduate trainee, gaining exposure to experimental design, animal-model workflows, research communication, and data interpretation without claiming independent ownership of the project.",
+    },
+    {
+      title: "Techniques and Models",
+      text:
+        "The work has involved tamoxifen-resistant MCF7 cells, luciferase-labeled cells, IVIS bioluminescence imaging, cisterna magna injection, lateral ventricle injection, Evans Blue dye optimization, and imlunestrant as a therapeutic angle.",
+    },
+    {
+      title: "Output and Communication",
+      text:
+        "This research is connected to my accepted NCUR 2026 poster presentation and has helped me practice translating technical research details into a clearer scientific narrative.",
+    },
+  ];
+
+  const researchResponsibilities = [
+    "Contributed to a project focused on leptomeningeal disease modeling in endocrine-resistant breast cancer.",
+    "Gained experience with animal-model workflows, disease monitoring, and IVIS bioluminescence imaging.",
+    "Supported optimization work involving injection approaches and Evans Blue dye visualization.",
+    "Helped prepare research communication connected to NCUR 2026.",
+    "Developed exposure to data interpretation, experimental planning, and translational oncology questions.",
+  ];
+
+  const researchExperiences = [
     {
       icon: <Microscope aria-hidden="true" />,
-      title: "Mays Cancer Center Research",
-      subtitle: "Mays Cancer Center at UT Health San Antonio | Dr. Brenner Lab",
-      text: "Worked on a project focused on establishing an in vivo leptomeningeal disease model using tamoxifen-resistant MCF7 breast cancer cells.",
+      title: "Mays Cancer Center / Dr. Brenner Lab",
+      date: "Summer 2025-Present",
+      subtitle: "UT Health San Antonio",
+      text:
+        "Undergraduate translational oncology research experience focused on endocrine-resistant breast cancer and leptomeningeal disease modeling.",
     },
     {
-      icon: <ClipboardList aria-hidden="true" />,
-      title: "Experimental and Imaging Exposure",
-      subtitle: "Luciferase-labeled cells and IVIS bioluminescence imaging",
-      text: "Gained experience with animal-model workflows, luciferase-labeled cells, IVIS imaging, disease monitoring, data interpretation, and research communication.",
+      icon: <Award aria-hidden="true" />,
+      title: "MCC ACS Cancer Research Summer Program",
+      date: "Summer 2025",
+      subtitle: "Mays Cancer Center",
+      text:
+        "Cancer research summer program experience connected to my development in oncology research and scientific communication.",
     },
     {
-      icon: <BookOpen aria-hidden="true" />,
-      title: "Therapeutic Angle",
-      subtitle: "Imlunestrant and endocrine-resistant breast cancer",
-      text: "Developed exposure to translational questions involving endocrine resistance and imlunestrant as a therapeutic angle, while learning how preclinical models can connect to clinical problems.",
+      icon: <Users aria-hidden="true" />,
+      title: "Mays Cancer Center Affiliate / Alumni Connection",
+      date: "August 2025-Present",
+      subtitle: "Mays Cancer Center",
+      text:
+        "Ongoing connection to the Mays Cancer Center research community following summer research participation.",
     },
   ];
 
   const presentations = [
     {
       title: "NCUR 2026 Poster Presentation",
-      venue: "National Conference on Undergraduate Research | Richmond, Virginia",
-      date: "2026",
+      venue:
+        "National Conference on Undergraduate Research | Richmond, Virginia",
+      date: "April 15, 2026",
       description:
-        "Poster #1119 on leptomeningeal disease research connected to undergraduate cancer research through Mays Cancer Center and UTSA.",
+        "Poster #1119, Student Poster Presentation Session 009, Exhibit Hall A, 1:00-1:50 PM. Topic: leptomeningeal disease research connected to endocrine-resistant breast cancer and Mays Cancer Center research.",
       status: "Accepted Presentation",
+      link: "/NCUR_2026_LMD_Poster_Victor_Bravo.pdf",
+      linkLabel: "View NCUR Poster",
     },
     {
-      title: "Mays Cancer Center Research Development",
-      venue: "Dr. Brenner Lab | UT Health San Antonio",
-      date: "Ongoing",
-      description:
-        "Ongoing development through lab discussions, experimental design exposure, animal-model workflows, data interpretation, and preparation for research communication.",
-      status: "Scholarly Development",
-    },
-    {
-      title: "Manuscripts and Publications",
+      title: "Manuscripts, Abstracts, and Publications",
       venue: "Future scholarly output",
       date: "As available",
       description:
-        "Manuscripts and publications will be added as they become available.",
+        "Manuscripts, abstracts, and peer-reviewed publications will be added here if and when they become available.",
       status: "Placeholder",
     },
   ];
@@ -115,14 +172,18 @@ export default function PhysicianScientistPortfolio() {
     {
       icon: <Stethoscope aria-hidden="true" />,
       title: "Medical Assistant",
+      date: "September 2025-Present",
       subtitle: "Hopscotch Health | Pediatric urgent care and primary care",
-      text: "Supported patient intake, vitals, documentation, injections and vaccines when appropriate, front desk coordination, patient flow, and bilingual communication with families.",
+      text:
+        "Supported patient intake, vitals, documentation, front desk workflow, patient flow, injections and vaccines when appropriate, and bilingual communication with families.",
     },
     {
       icon: <FileText aria-hidden="true" />,
       title: "Emergency Department Scribe",
-      subtitle: "ProScribe | Methodist hospital emergency departments",
-      text: "Documented visits in real time, including HPI, ROS, physical exam, and clinical reasoning exposure while observing physician communication, diagnostic reasoning, interprofessional teamwork, and emergency department flow.",
+      date: "02/01/2024-12/12/2024",
+      subtitle: "ProScribe / Methodist Hospitals",
+      text:
+        "Documented visits in real time, including HPI, ROS, and physical exam documentation, while observing diagnostic reasoning, emergency department flow, interprofessional communication, and physicians working under pressure.",
     },
   ];
 
@@ -130,81 +191,110 @@ export default function PhysicianScientistPortfolio() {
     {
       icon: <HeartPulse aria-hidden="true" />,
       title: "Corazón Medical Clinic",
+      date: "08/01/2023-Present",
       subtitle: "Free clinic serving underserved and uninsured patients in San Antonio",
-      text: "Served in patient-support roles involving intake, vitals, triage and pharmacy exposure, and clinic flow support, connecting my clinical interests to healthcare access and community-centered care.",
+      text:
+        "Served in patient-support roles involving intake, vitals, triage and pharmacy exposure, and patient support, connecting clinical interests to access and community-centered care.",
     },
     {
       icon: <Users aria-hidden="true" />,
-      title: "VAW Medical Chapter",
-      subtitle: "UTSA Volunteers Around the World Medical Chapter",
-      text: "Helped prepare students for medical service by emphasizing patient interaction, intake, vitals, cultural context, clinic expectations, and responsible preparation.",
+      title: "Cibolo Gardens Volunteer",
+      date: "09/01/2023-12/12/2023",
+      subtitle: "Community service",
+      text:
+        "Brief community volunteer experience that contributed to early service development before more sustained clinical and medically focused service roles.",
     },
   ];
 
   const leadership = [
     {
       icon: <Users aria-hidden="true" />,
-      title: "VAW Medical Site Leader",
-      subtitle: "Peru medical trip preparation and team leadership",
-      text: "Led intern preparation and organized trainings on intake, vitals, patient interaction, country context, clinic expectations, logistics, and team readiness for international clinical service.",
+      title: "UTSA Volunteers Around the World Medical Chapter",
+      date: "2025-2026",
+      subtitle: "Site Leader | Peru medical trip preparation",
+      text:
+        "Helped prepare interns for supervised international clinical service through training on intake, vitals, patient interaction, country context, clinic expectations, logistics, communication, humility, and team responsibility.",
     },
     {
       icon: <School aria-hidden="true" />,
       title: "Honors College Student Advisory Board",
-      subtitle: "Board member, recruitment, mentorship, and community-building",
-      text: "Supported student programming and helped develop peer mentorship infrastructure so Honors students, especially younger students, could better understand opportunities and feel connected.",
+      date: "05/2025-Present",
+      subtitle: "Board member, recruitment, mentorship, and programming",
+      text:
+        "Supported student programming, mentor and mentee recruitment, peer mentorship infrastructure, and efforts to help younger Honors students understand opportunities and feel connected.",
     },
     {
       icon: <GraduationCap aria-hidden="true" />,
-      title: "First-Generation Mentorship",
-      subtitle: "South Texas background and first-generation student perspective",
-      text: "My first-generation background shapes my interest in helping students translate ambition into concrete academic, research, and professional steps. Mentorship is a recurring theme in how I approach leadership.",
+      title: "First Gen Scholars / Scholarship Association",
+      date: "Fall 2025-Present",
+      subtitle: "First-generation student support",
+      text:
+        "Engaged in mentorship, guidance, and first-generation student support, consistent with my interest in helping students translate ambition into concrete academic and professional steps.",
+    },
+    {
+      icon: <BookOpen aria-hidden="true" />,
+      title: "Pathways to Medicine Program",
+      date: "12/02/2024-12/10/2025",
+      subtitle: "UT Health San Antonio",
+      text:
+        "Professional development experience involving mentorship, workshops, clinical exposure, and physician and medical student guidance.",
     },
   ];
 
   const academicExperiences = [
     {
-      title: "UTSA Honors College",
-      text: "Honors coursework and academic community have helped me connect scientific preparation with broader questions about migration, human development, service, and social context.",
+      title: "Migration & Human Development",
+      date: "Spring 2025",
+      text:
+        "Honors coursework that connected migration, human development, and social context to how I think about communities and healthcare.",
     },
     {
       title: "Study Abroad in Oaxaca and Mexico City",
-      text: "Study abroad experience deepened my understanding of culture, migration, community, and human development in ways that inform how I think about medicine and service.",
+      date: "Spring 2025",
+      text:
+        "Academic experience that deepened my understanding of culture, migration, and human development.",
     },
     {
-      title: "Pathways to Medicine Program",
-      text: "Participation in the Pathways to Medicine Program at UT Health San Antonio has supported my professional development and preparation for a career in medicine.",
+      title: "Civic Ethos Honors Course",
+      date: "Fall 2025",
+      text:
+        "Honors coursework focused on civic engagement, responsibility, and community-oriented thinking.",
     },
     {
-      title: "CURES/FlyCURE Research Experience",
-      text: "Early research training through CURES/FlyCURE contributed to my academic development and helped build a foundation for later cancer research experience.",
+      title: "CURES / FlyCURE / GEP Research Experience",
+      date: "Fall 2025-Spring 2026",
+      text:
+        "BIO 2073 Genomics Education Partnership in Fall 2025 and BIO 3053 SRI: GEP/FlyCURE in Spring 2026.",
     },
   ];
 
-  const projects = [
+  const currentProjects = [
     {
       title: "Physician-Scientist Portfolio Website",
       description:
-        "A professional portfolio built to organize research, clinical experience, leadership, service, scholarly work, and technical projects.",
+        "A professional portfolio built to organize research, clinical experience, service, leadership, scholarly work, and technical projects.",
       tag: "Current Project",
     },
+  ];
+
+  const plannedProjects = [
     {
-      title: "Future Research Dashboard",
+      title: "Research Dashboard",
       description:
         "A planned tool for organizing experimental timelines, research notes, cohort information, literature summaries, and data visualization.",
-      tag: "Research Tools",
+      tag: "Planned Project",
     },
     {
       title: "VAW Operations Toolkit",
       description:
         "A planned tool to organize intern training, packing lists, clinic rotations, attendance, and preparation resources for medical service trips.",
-      tag: "Leadership Operations",
+      tag: "Planned Project",
     },
     {
       title: "MCAT / Study Analytics Dashboard",
       description:
         "A possible future project to connect study hours, practice questions, weak topics, sleep, and performance trends.",
-      tag: "Learning Analytics",
+      tag: "Planned Project",
     },
   ];
 
@@ -218,11 +308,11 @@ export default function PhysicianScientistPortfolio() {
           </a>
           <nav className="desktop-nav" aria-label="Primary navigation">
             <a href="#cv">CV</a>
+            <a href="#interests">Interests</a>
             <a href="#research">Research</a>
             <a href="#scholarly-work">Scholarly Work</a>
             <a href="#clinical">Clinical</a>
             <a href="#service">Service</a>
-            <a href="#leadership">Leadership</a>
             <a href="#projects">Projects</a>
           </nav>
         </div>
@@ -237,28 +327,32 @@ export default function PhysicianScientistPortfolio() {
             transition={{ duration: 0.6 }}
           >
             <p className="eyebrow">
-              Premedical student developing a physician-scientist path through translational oncology research, clinical care, and service leadership.
+              Premedical student building a physician-scientist path through translational oncology research, patient-facing clinical work, and service leadership.
             </p>
             <h1>Victor Bravo</h1>
             <p className="hero-text">
               I am a first-generation premedical student at The University of Texas
               at San Antonio, majoring in Biology with a Chemistry minor and studying
               in the UTSA Honors College. I am preparing to apply to medical school
-              with a growing MD/PhD focus in translational oncology, cancer biology,
-              and the connection between patient care and research.
+              with a growing MD/PhD focus in translational oncology and cancer biology.
             </p>
             <p className="hero-text">
-              My path is being built through Mays Cancer Center research, patient-facing
-              clinical roles, service with underserved communities, leadership in medical
-              volunteer preparation, and mentorship rooted in my South Texas and
-              first-generation student background.
+              My current research experience centers on endocrine-resistant breast
+              cancer and leptomeningeal disease modeling through the Mays Cancer
+              Center at UT Health San Antonio.
             </p>
             <div className="hero-actions">
               <Button as="a" href="#research">
                 View Research
               </Button>
-              <Button as="a" href="#cv" variant="outline">
-                CV Snapshot
+              <Button
+                as="a"
+                href="/Victor_Bravo_CV.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="outline"
+              >
+                CV PDF
               </Button>
             </div>
           </motion.div>
@@ -283,17 +377,16 @@ export default function PhysicianScientistPortfolio() {
                 </div>
                 <h2>Current Focus</h2>
                 <p>
-                  Building depth, not just collecting experiences: translational
-                  oncology research, clinical maturity, community-centered service,
-                  leadership, mentorship, and technical tools that support medicine
-                  and research.
+                  Developing a stronger foundation in cancer research, clinical
+                  documentation, patient communication, community service, and
+                  mentorship while preparing for MD/PhD-oriented training.
                 </p>
                 <div className="focus-list">
                   <span>
                     <GraduationCap aria-hidden="true" /> UTSA Biology major, Chemistry minor
                   </span>
                   <span>
-                    <School aria-hidden="true" /> UTSA Honors College
+                    <Calendar aria-hidden="true" /> Expected graduation: Fall 2026
                   </span>
                   <span>
                     <MapPin aria-hidden="true" /> South Texas and San Antonio
@@ -309,15 +402,13 @@ export default function PhysicianScientistPortfolio() {
 
         <section id="about" className="section section-white">
           <div className="content-width">
-            <h2>About</h2>
+            <h2>Early Physician-Scientist Portfolio</h2>
             <p className="section-lede">
-              My long-term goal is to become a physician-scientist who connects
-              patient care with cancer research. I am especially interested in
-              translational oncology, endocrine-resistant breast cancer, and research
-              questions that emerge from real clinical needs. As a first-generation
-              student from South Texas, I also care deeply about mentorship,
-              preparation, and helping students navigate paths that can feel opaque
-              from the outside.
+              The goal of this site is to show evidence of a focused path: cancer
+              research experience, patient-facing clinical work, service in San
+              Antonio, leadership through preparation and mentorship, and technical
+              projects that may eventually support research organization and
+              communication.
             </p>
           </div>
         </section>
@@ -327,9 +418,8 @@ export default function PhysicianScientistPortfolio() {
             <div className="section-heading">
               <h2>CV Snapshot</h2>
               <p>
-                A concise overview for research mentors, scholarship committees,
-                MD/PhD programs, and professional networking. Metrics and a formal
-                CV PDF can be added later.
+                Dated overview for research mentors, scholarship committees, MD/PhD
+                programs, competitive internships, and professional networking.
               </p>
             </div>
 
@@ -339,6 +429,7 @@ export default function PhysicianScientistPortfolio() {
                   <CardContent>
                     <span className="meta-label">{item.label}</span>
                     <h3>{item.value}</h3>
+                    <p className="date-pill">{item.date}</p>
                     <p>{item.detail}</p>
                   </CardContent>
                 </Card>
@@ -347,15 +438,30 @@ export default function PhysicianScientistPortfolio() {
           </div>
         </section>
 
-        <section id="research" className="section section-white">
+        <section id="interests" className="section section-white">
+          <div className="content-width">
+            <div className="section-heading">
+              <h2>Research Interests</h2>
+              <p>
+                Areas I am using coursework, research training, clinical exposure,
+                and technical projects to understand more deeply.
+              </p>
+            </div>
+            <div className="interest-grid">
+              {researchInterests.map((interest) => (
+                <span key={interest}>{interest}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="research" className="section">
           <div className="content-width">
             <div className="section-heading">
               <h2>Research</h2>
               <p>
                 My main research experience is through the Mays Cancer Center at UT
-                Health San Antonio in Dr. Brenner's lab, where I have worked on a
-                translational oncology project focused on leptomeningeal disease and
-                endocrine-resistant breast cancer.
+                Health San Antonio in Dr. Brenner's lab, beginning in Summer 2025.
               </p>
             </div>
 
@@ -364,27 +470,27 @@ export default function PhysicianScientistPortfolio() {
                 <div className="research-panel">
                   <Microscope aria-hidden="true" />
                   <h3>Mays Cancer Center</h3>
-                  <p>UT Health San Antonio | Dr. Brenner Lab</p>
+                  <p>Summer 2025-Present | UT Health San Antonio</p>
                 </div>
                 <div className="research-copy">
                   <h3>Leptomeningeal Disease Model in Endocrine-Resistant Breast Cancer</h3>
                   <p>
                     I contributed to a project focused on establishing an in vivo model
                     of leptomeningeal disease using tamoxifen-resistant MCF7 breast
-                    cancer cells. The project involved luciferase-labeled cells, IVIS
-                    bioluminescence imaging, and a therapeutic angle involving
-                    imlunestrant. Through this work, I gained exposure to experimental
-                    design, animal-model workflows, research communication, and data
-                    interpretation.
+                    cancer cells. The work sits within translational oncology and ER+
+                    breast cancer research and includes luciferase-labeled cells, IVIS
+                    bioluminescence imaging, cisterna magna injection, lateral ventricle
+                    injection, Evans Blue dye optimization, and imlunestrant as a
+                    therapeutic angle.
                   </p>
                   <div className="tag-list">
                     {[
                       "Translational Oncology",
-                      "Cancer Biology",
+                      "ER+ Breast Cancer",
                       "Endocrine Resistance",
                       "Leptomeningeal Disease",
                       "IVIS Imaging",
-                      "MD/PhD Preparation",
+                      "Preclinical Models",
                     ].map((item) => (
                       <span key={item}>{item}</span>
                     ))}
@@ -393,12 +499,36 @@ export default function PhysicianScientistPortfolio() {
               </CardContent>
             </Card>
 
+            <div className="research-detail-grid">
+              {researchSummary.map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+
+            <Card className="responsibility-card">
+              <CardContent>
+                <div>
+                  <span className="meta-label">Research Responsibilities</span>
+                  <h3>Conservative Summary of Undergraduate Research Involvement</h3>
+                </div>
+                <ul>
+                  {researchResponsibilities.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
             <div className="card-grid">
-              {researchAreas.map((item) => (
+              {researchExperiences.map((item) => (
                 <Card key={item.title}>
                   <CardContent>
                     <div className="icon-tile">{item.icon}</div>
                     <h3>{item.title}</h3>
+                    <p className="date-pill">{item.date}</p>
                     <p className="card-subtitle">{item.subtitle}</p>
                     <p>{item.text}</p>
                   </CardContent>
@@ -408,13 +538,13 @@ export default function PhysicianScientistPortfolio() {
           </div>
         </section>
 
-        <section id="scholarly-work" className="section">
+        <section id="scholarly-work" className="section section-white">
           <div className="content-width">
             <div className="section-heading">
               <h2>Presentations & Scholarly Work</h2>
               <p>
-                Current research communication and a structured place for future
-                abstracts, manuscripts, and publications.
+                Research communication connected to undergraduate cancer research.
+                No peer-reviewed publications are claimed here.
               </p>
             </div>
             <div className="publication-list">
@@ -424,6 +554,17 @@ export default function PhysicianScientistPortfolio() {
                     <span className="project-tag">{item.status}</span>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
+                    {item.link && (
+                      <Button
+                        as="a"
+                        className="inline-button"
+                        href={item.link}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <FileText aria-hidden="true" /> {item.linkLabel}
+                      </Button>
+                    )}
                   </div>
                   <div className="publication-meta">
                     <span>{item.venue}</span>
@@ -435,14 +576,14 @@ export default function PhysicianScientistPortfolio() {
           </div>
         </section>
 
-        <section id="clinical" className="section section-white">
+        <section id="clinical" className="section">
           <div className="content-width">
             <div className="section-heading">
               <h2>Clinical Experience</h2>
               <p>
                 Patient-facing and documentation experiences that keep my research
-                interests grounded in communication, trust, clinical reasoning, and
-                the realities of care delivery.
+                interests grounded in communication, clinical reasoning, and care
+                delivery.
               </p>
             </div>
             <div className="card-grid two-column">
@@ -451,28 +592,23 @@ export default function PhysicianScientistPortfolio() {
                   <CardContent>
                     <div className="icon-tile">{item.icon}</div>
                     <h3>{item.title}</h3>
+                    <p className="date-pill">{item.date}</p>
                     <p className="card-subtitle">{item.subtitle}</p>
                     <p>{item.text}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <p className="section-note">
-              These roles taught me that trust is often built through clear, calm
-              communication, especially when parents are anxious, patients are
-              navigating uncertainty, or language barriers are present.
-            </p>
           </div>
         </section>
 
-        <section id="service" className="section">
+        <section id="service" className="section section-white">
           <div className="content-width">
             <div className="section-heading">
               <h2>Service</h2>
               <p>
-                Service experiences have helped me connect medicine to access,
-                preparation, and community-centered care rather than viewing clinical
-                exposure only as observation.
+                Service experiences connected to healthcare access, patient support,
+                and community-centered care in San Antonio.
               </p>
             </div>
             <div className="card-grid two-column">
@@ -481,6 +617,7 @@ export default function PhysicianScientistPortfolio() {
                   <CardContent>
                     <div className="icon-tile">{item.icon}</div>
                     <h3>{item.title}</h3>
+                    <p className="date-pill">{item.date}</p>
                     <p className="card-subtitle">{item.subtitle}</p>
                     <p>{item.text}</p>
                   </CardContent>
@@ -490,14 +627,14 @@ export default function PhysicianScientistPortfolio() {
           </div>
         </section>
 
-        <section id="leadership" className="section section-white">
+        <section id="leadership" className="section">
           <div className="content-width">
             <div className="section-heading">
-              <h2>Leadership & Mentorship</h2>
+              <h2>Leadership, Mentorship & Preparation</h2>
               <p>
-                My leadership has centered on preparation, communication, student
-                support, and building structures that help others understand what is
-                expected before they enter clinical, academic, or service settings.
+                Leadership roles centered on preparation, communication, supervised
+                service, peer mentorship, first-generation support, and professional
+                development.
               </p>
             </div>
             <div className="card-grid">
@@ -506,6 +643,7 @@ export default function PhysicianScientistPortfolio() {
                   <CardContent>
                     <div className="icon-tile">{item.icon}</div>
                     <h3>{item.title}</h3>
+                    <p className="date-pill">{item.date}</p>
                     <p className="card-subtitle">{item.subtitle}</p>
                     <p>{item.text}</p>
                   </CardContent>
@@ -515,19 +653,22 @@ export default function PhysicianScientistPortfolio() {
           </div>
         </section>
 
-        <section id="academic-development" className="section">
+        <section id="academic-development" className="section section-white">
           <div className="content-width">
             <div className="section-heading">
               <h2>Academic Development</h2>
               <p>
-                Additional academic experiences that have shaped how I think about
-                medicine, research, human development, migration, and preparation.
+                Concise academic experiences that add context without outweighing
+                research, clinical work, and service.
               </p>
             </div>
             <div className="detail-list">
               {academicExperiences.map((item) => (
                 <article key={item.title}>
-                  <h3>{item.title}</h3>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p className="date-pill">{item.date}</p>
+                  </div>
                   <p>{item.text}</p>
                 </article>
               ))}
@@ -535,60 +676,95 @@ export default function PhysicianScientistPortfolio() {
           </div>
         </section>
 
-        <section id="projects" className="section section-white">
+        <section id="projects" className="section">
           <div className="content-width">
             <div className="section-heading">
               <h2>Technical Projects</h2>
               <p>
-                Early coding and AI-assisted projects connected to medicine, research,
-                leadership, and study systems.
+                Early coding projects connected to research organization, service
+                leadership, and structured learning.
               </p>
             </div>
-            <div className="card-grid project-grid">
-              {projects.map((project) => (
-                <Card key={project.title}>
-                  <CardContent>
-                    <span className="project-tag">{project.tag}</span>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+
+            <div className="project-group">
+              <span className="meta-label">Current Project</span>
+              <div className="card-grid two-column">
+                {currentProjects.map((project) => (
+                  <Card key={project.title}>
+                    <CardContent>
+                      <span className="project-tag">{project.tag}</span>
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            <div className="project-group">
+              <span className="meta-label">Planned Projects</span>
+              <div className="card-grid">
+                {plannedProjects.map((project) => (
+                  <Card key={project.title}>
+                    <CardContent>
+                      <span className="project-tag">{project.tag}</span>
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="contact" className="contact-section">
+        <footer id="contact" className="contact-section">
           <div className="content-width">
             <h2>Contact</h2>
             <p>
               I welcome opportunities connected to translational oncology research,
-              clinical mentorship, medical education, scholarship programs,
-              physician-scientist preparation, and technical projects that support
-              research or service.
+              clinical mentorship, scholarship programs, competitive research
+              internships, physician-scientist preparation, and technical projects
+              that support research communication.
             </p>
             <div className="contact-actions">
               <Button as="a" href="mailto:vicbravojr@gmail.com" variant="secondary">
                 <Mail aria-hidden="true" /> Email
               </Button>
-              <Button as="a" href="/Victor_Bravo_CV.pdf" variant="inverse">
+              <Button
+                as="a"
+                href="/Victor_Bravo_CV.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="inverse"
+              >
                 <FileText aria-hidden="true" /> CV PDF
               </Button>
               <Button
                 as="a"
-                href="https://www.linkedin.com/in/victor-bravo-a05b79291/"
+                href={linkedInUrl}
                 rel="noopener noreferrer"
                 target="_blank"
                 variant="inverse"
               >
                 <ExternalLink aria-hidden="true" /> LinkedIn
               </Button>
+              <Button
+                as="a"
+                href={githubUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="inverse"
+              >
+                <Github aria-hidden="true" /> GitHub
+              </Button>
               <Button as="a" href="#projects" variant="inverse">
                 <BookOpen aria-hidden="true" /> Projects
               </Button>
             </div>
+            <p className="last-updated">Last updated: May 2026</p>
           </div>
-        </section>
+        </footer>
       </main>
     </div>
   );
