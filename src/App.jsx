@@ -97,7 +97,7 @@ export default function PhysicianScientistPortfolio() {
     {
       title: "My Role",
       text:
-        "I have supported the project as an undergraduate trainee, gaining exposure to experimental design, animal-model workflows, research communication, and data interpretation without claiming independent ownership of the project.",
+        "As an undergraduate trainee, I contributed to project workflows involving animal-model preparation, disease monitoring, IVIS imaging, optimization discussions, research communication, and interpretation of preclinical oncology data under mentorship from the Brenner Lab.",
     },
     {
       title: "Techniques and Models",
@@ -113,10 +113,10 @@ export default function PhysicianScientistPortfolio() {
 
   const researchResponsibilities = [
     "Contributed to a project focused on leptomeningeal disease modeling in endocrine-resistant breast cancer.",
-    "Gained experience with animal-model workflows, disease monitoring, and IVIS bioluminescence imaging.",
+    "Built experience with animal-model workflows, disease monitoring, and IVIS bioluminescence imaging.",
     "Supported optimization work involving injection approaches and Evans Blue dye visualization.",
     "Helped prepare research communication connected to NCUR 2026.",
-    "Developed exposure to data interpretation, experimental planning, and translational oncology questions.",
+    "Developed practical familiarity with data interpretation, experimental planning, and translational oncology questions.",
   ];
 
   const researchExperiences = [
@@ -138,11 +138,11 @@ export default function PhysicianScientistPortfolio() {
     },
     {
       icon: <Users aria-hidden="true" />,
-      title: "Mays Cancer Center Affiliate / Alumni Connection",
+      title: "Mays Cancer Center Affiliate Member",
       date: "August 2025-Present",
       subtitle: "Mays Cancer Center",
       text:
-        "Ongoing connection to the Mays Cancer Center research community following summer research participation.",
+        "Ongoing connection to the Mays Cancer Center research community following summer research participation and continued development in oncology research.",
     },
   ];
 
@@ -163,8 +163,7 @@ export default function PhysicianScientistPortfolio() {
       venue: "Future scholarly output",
       date: "As available",
       description:
-        "Manuscripts, abstracts, and peer-reviewed publications will be added here if and when they become available.",
-      status: "Placeholder",
+        "No peer-reviewed publications are listed at this time. Future manuscripts, abstracts, and publications will be added as they become available.",
     },
   ];
 
@@ -273,7 +272,7 @@ export default function PhysicianScientistPortfolio() {
       title: "Physician-Scientist Portfolio Website",
       description:
         "A professional portfolio built to organize research, clinical experience, service, leadership, scholarly work, and technical projects.",
-      tag: "Current Project",
+      tag: "Live Portfolio",
     },
   ];
 
@@ -291,9 +290,9 @@ export default function PhysicianScientistPortfolio() {
       tag: "Planned Project",
     },
     {
-      title: "MCAT / Study Analytics Dashboard",
+      title: "Learning Analytics Dashboard",
       description:
-        "A possible future project to connect study hours, practice questions, weak topics, sleep, and performance trends.",
+        "A possible future project to connect study behavior, practice questions, weak-topic identification, sleep, and performance trends.",
       tag: "Planned Project",
     },
   ];
@@ -333,8 +332,9 @@ export default function PhysicianScientistPortfolio() {
             <p className="hero-text">
               I am a first-generation premedical student at The University of Texas
               at San Antonio, majoring in Biology with a Chemistry minor and studying
-              in the UTSA Honors College. I am preparing to apply to medical school
-              with a growing MD/PhD focus in translational oncology and cancer biology.
+              in the UTSA Honors College. I am building toward physician-scientist
+              training with a developing focus in translational oncology, cancer
+              biology, and patient-centered cancer research.
             </p>
             <p className="hero-text">
               My current research experience centers on endocrine-resistant breast
@@ -377,9 +377,8 @@ export default function PhysicianScientistPortfolio() {
                 </div>
                 <h2>Current Focus</h2>
                 <p>
-                  Developing a stronger foundation in cancer research, clinical
-                  documentation, patient communication, community service, and
-                  mentorship while preparing for MD/PhD-oriented training.
+                  Building research, clinical, service, and mentorship experience
+                  that supports a future physician-scientist path in oncology.
                 </p>
                 <div className="focus-list">
                   <span>
@@ -402,13 +401,13 @@ export default function PhysicianScientistPortfolio() {
 
         <section id="about" className="section section-white">
           <div className="content-width">
-            <h2>Early Physician-Scientist Portfolio</h2>
+            <h2>Physician-Scientist Portfolio</h2>
             <p className="section-lede">
-              The goal of this site is to show evidence of a focused path: cancer
-              research experience, patient-facing clinical work, service in San
-              Antonio, leadership through preparation and mentorship, and technical
-              projects that may eventually support research organization and
-              communication.
+              This site organizes the evidence behind my current path:
+              translational oncology research, patient-facing clinical work,
+              community service in San Antonio, leadership through preparation and
+              mentorship, and technical projects that support research communication
+              and organization.
             </p>
           </div>
         </section>
@@ -512,7 +511,7 @@ export default function PhysicianScientistPortfolio() {
               <CardContent>
                 <div>
                   <span className="meta-label">Research Responsibilities</span>
-                  <h3>Conservative Summary of Undergraduate Research Involvement</h3>
+                  <h3>Undergraduate Research Responsibilities</h3>
                 </div>
                 <ul>
                   {researchResponsibilities.map((item) => (
@@ -551,7 +550,7 @@ export default function PhysicianScientistPortfolio() {
               {presentations.map((item) => (
                 <article className="publication-item" key={item.title}>
                   <div>
-                    <span className="project-tag">{item.status}</span>
+                    {item.status && <span className="project-tag">{item.status}</span>}
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
                     {item.link && (
@@ -686,7 +685,7 @@ export default function PhysicianScientistPortfolio() {
               </p>
             </div>
 
-            <div className="project-group">
+            <div className="project-group featured-project">
               <span className="meta-label">Current Project</span>
               <div className="card-grid two-column">
                 {currentProjects.map((project) => (
@@ -701,7 +700,7 @@ export default function PhysicianScientistPortfolio() {
               </div>
             </div>
 
-            <div className="project-group">
+            <div className="project-group planned-projects">
               <span className="meta-label">Planned Projects</span>
               <div className="card-grid">
                 {plannedProjects.map((project) => (
