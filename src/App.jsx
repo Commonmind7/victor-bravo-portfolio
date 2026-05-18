@@ -7,7 +7,6 @@ import {
   ClipboardList,
   ExternalLink,
   FileText,
-  Github,
   GraduationCap,
   HeartPulse,
   Mail,
@@ -21,7 +20,6 @@ import { Button } from "./components/ui/button.jsx";
 import { Card, CardContent } from "./components/ui/card.jsx";
 
 const linkedInUrl = "https://www.linkedin.com/in/victor-bravo-a05b79291/";
-const githubUrl = "https://github.com/Commonmind7";
 
 export default function PhysicianScientistPortfolio() {
   const cvHighlights = [
@@ -747,15 +745,6 @@ export default function PhysicianScientistPortfolio() {
                 variant="inverse"
               >
                 <ExternalLink aria-hidden="true" /> LinkedIn
-              </Button>
-              <Button
-                as="a"
-                href={githubUrl}
-                rel="noopener noreferrer"
-                target="_blank"
-                variant="inverse"
-              >
-                <Github aria-hidden="true" /> GitHub
               </Button>
               <Button as="a" href="#projects" variant="inverse">
                 <BookOpen aria-hidden="true" /> Projects
